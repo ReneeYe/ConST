@@ -1,4 +1,3 @@
-pytorch
 numpy
 nltk
 tqdm
