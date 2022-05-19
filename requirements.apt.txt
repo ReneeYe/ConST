@@ -6,4 +6,3 @@ sox
 curl
 axel
 libsndfile1
-krb5-user

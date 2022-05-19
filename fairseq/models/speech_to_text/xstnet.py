@@ -154,7 +154,12 @@ class XSTNetEncoder(FairseqEncoder):
         assert args.w2v2_model_path is not None
         self.w2v2_model_path = args.w2v2_model_path
         self.use_asr_finetune_w2v = args.use_asr_finetune_w2v
-        ckpt = torch.load(self.w2v2_model_path)
+        try:
+            ckpt = torch.load(self.w2v2_model_path)
+        except FileNotFoundError:
+            if not os.path.exists("wav2vec_small.pt"):
+                os.system(f"wget https://dl.fbaipublicfiles.com/fairseq/wav2vec/wav2vec_small.pt")
+            ckpt = torch.load("wav2vec_small.pt")
         self.w2v_args = ckpt["args"]
         if not self.use_asr_finetune_w2v:  # if use ssl-trained only
             self.w2v_args = ckpt["args"]

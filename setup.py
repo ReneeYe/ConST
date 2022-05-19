@@ -229,9 +229,9 @@ try:
     # symlink examples into fairseq package so package_data accepts them
     fairseq_examples = os.path.join("fairseq", "examples")
     if "build_ext" not in sys.argv[1:] and not os.path.exists(fairseq_examples):
-        os.symlink(os.path.join("..", "examples"), fairseq_examples)
+        os.symlink(os.path.join("..", "ConST"), fairseq_examples)
     package_data = {
-        "fairseq": get_files("fairseq/examples"),
+        "fairseq": get_files("fairseq/examples") + get_files("fairseq/config"),
     }
     do_setup(package_data)
 finally:
