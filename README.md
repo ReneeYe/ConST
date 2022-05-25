@@ -33,10 +33,11 @@ Experience our end-to-end voice translation system on [Huggingface Space](https:
 Record a sentence in English and translate it into other languages! You are a **TRANSLATOR**! 
 
 HERE IS THE WEBSITE:
+
 https://huggingface.co/spaces/ReneeYe/ConST-speech2text-translator
 
 <div align="center">
-  <img href="https://huggingface.co/spaces/ReneeYe/ConST-speech2text-translator" src="ConST/resources/demo_screenshot.png" width="100%">
+  <img src="ConST/resources/demo_screenshot.png" width="100%">
 </div>
 
 *P.S.* Since huggingface space only provides CPU, it will take 12-20 seconds to inference and generate the translation result.
